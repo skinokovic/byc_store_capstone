@@ -1,94 +1,3 @@
-// import { useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { Eye, Heart } from "lucide-react";
-// import { fetchBlogById, clearSelectedBlog } from "../redux/slice/blogSlice";
-// import { fetchComments, clearComments } from "../redux/slice/commentSlice";
-// import CommentForm from "../components/comment/commentForm";
-// import CommentList from "../components/comment/CommentList";
-
-// function BlogDetail() {
-//   const { slug } = useParams();
-//   const dispatch = useDispatch();
-
-//   const { selectedBlog: blog, loading } = useSelector((state) => state.blogs);
-
-//   useEffect(() => {
-//     dispatch(fetchBlogById(slug));
-//     return () => dispatch(clearSelectedBlog());
-//   }, [slug, dispatch]);
-
-//   useEffect(() => {
-//     if (blog?._id) {
-//       dispatch(fetchComments(blog._id));
-//     }
-//     return () => dispatch(clearComments());
-//   }, [blog?._id, dispatch]);
-
-//   if (loading || !blog) {
-//     return (
-//       <div className="container py-5">
-//         <p className="text-secondary">Loading blog post...</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <article className="container py-5" style={{ maxWidth: 800 }}>
-//       <img
-//         src={blog.coverImage?.url}
-//         alt={blog.title}
-//         className="w-100 object-fit-cover rounded mb-4"
-//         style={{ aspectRatio: "16 / 9" }}
-//       />
-
-//       <div className="d-flex align-items-center gap-3 mb-3">
-//         {blog.author?.avatar && (
-//           <img
-//             src={blog.author.avatar}
-//             alt={blog.author.name}
-//             className="rounded-circle"
-//             style={{ width: 44, height: 44, objectFit: "cover" }}
-//           />
-//         )}
-
-//         <div>
-//           <p className="fw-semibold mb-0">{blog.author?.name}</p>
-//           <p className="text-secondary small mb-0">
-//             {new Date(blog.createdAt).toLocaleDateString(undefined, {
-//               year: "numeric",
-//               month: "long",
-//               day: "numeric",
-//             })}
-//           </p>
-//         </div>
-
-//         <div className="d-flex align-items-center gap-3 text-secondary small ms-auto">
-//           <span className="d-flex align-items-center gap-1">
-//             <Eye size={14} /> {blog.views}
-//           </span>
-//           <span className="d-flex align-items-center gap-1">
-//             <Heart size={14} /> {blog.likes}
-//           </span>
-//         </div>
-//       </div>
-
-//       <h1 className="fw-bold mb-4">{blog.title}</h1>
-
-//       <div className="mb-5" style={{ whiteSpace: "pre-line" }}>
-//         {blog.content}
-//       </div>
-
-//       <hr className="mb-4" />
-
-//       <CommentForm blogId={blog._id} />
-//       <CommentList blogId={blog._id} />
-//     </article>
-//   );
-// }
-
-// export default BlogDetail;
-
 import { useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -100,7 +9,7 @@ import {
 } from "../redux/slice/blogSlice";
 import { fetchComments, clearComments } from "../redux/slice/commentSlice";
 import CommentForm from "../components/comment/commentForm";
-import CommentList from "../components/comment/CommentList";
+import CommentList from "../components/comment/commentList";
 import LikeButton from "../components/LikeButton";
 
 function BlogDetail() {

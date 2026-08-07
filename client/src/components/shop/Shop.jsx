@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { X } from "lucide-react";
 
 import ProductCard from "../shop/ProductCard";
-import SortDropdown from "../shop/SortDropdown";
+import SortDropdown from "./SortDropDown";
 import ViewToggle from "../shop/ViewToggle";
 // import Pagination from "../shop/Pagination";
 import Pagination from "../common/Pagination";
