@@ -1,0 +1,55 @@
+/* Wishlist Button */
+
+.wishlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  background: #fff;
+
+  transition: all 0.25s ease;
+}
+
+.wishlist-btn:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.wishlist-btn:hover svg {
+  fill: white;
+}
+
+/* When Added */
+
+.wishlist-btn.wishlisted {
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  border-color: #dc3545;
+  color: white;
+
+  box-shadow: 0 8px 18px rgba(220, 53, 69, 0.28);
+}
+
+.wishlist-btn.wishlisted:hover {
+  transform: translateY(-2px);
+}
+
+.wishlist-heart {
+  animation: heartPop 0.35s ease;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(0.4);
+  }
+
+  60% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

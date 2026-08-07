@@ -1,0 +1,117 @@
+/* ==========================
+   Hero Typography
+========================== */
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #666;
+  letter-spacing: 0.03rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+}
+
+/* paragraph under title if present */
+.hero-description {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+.hero-actions .action-btn {
+  padding: 0.8rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ==========================
+   Images
+========================== */
+
+.hero-images-wrapper {
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.hero-figure {
+  transition: transform 0.4s ease;
+}
+
+.hero-figure-center {
+  transform: scale(1.15);
+}
+
+.hero-figure-side {
+  transform: scale(0.88) translateY(10%);
+  opacity: 0.9;
+}
+
+@media (max-width: 576px) {
+  .hero-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+    line-height: 1.28;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    padding: 0 0.75rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.4rem;
+  }
+
+  .hero-actions .action-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.82rem;
+  }
+
+  .hero-images-wrapper {
+    margin-top: 2.8rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-figure-center {
+    transform: scale(1.08);
+  }
+
+  .hero-figure-side {
+    transform: scale(0.82) translateY(8%);
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .hero-actions .action-btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.78rem;
+  }
+}

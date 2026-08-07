@@ -1,0 +1,27 @@
+import { createContext, useContext, useState } from "react";
+
+const CartDrawerContext = createContext(null);
+
+export function CartDrawerProvider({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
+  const toggleCart = () => setIsOpen((prev) => !prev);
+
+  return (
+    <CartDrawerContext.Provider
+      value={{ isOpen, openCart, closeCart, toggleCart }}
+    >
+      {children}
+    </CartDrawerContext.Provider>
+  );
+}
+
+export function useCartDrawer() {
+  const context = useContext(CartDrawerContext);
+  if (!context) {
+    throw new Error("useCartDrawer must be used inside a CartDrawerProvider");
+  }
+  return context;
+}

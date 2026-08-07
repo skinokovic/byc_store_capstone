@@ -1,0 +1,37 @@
+.footer-input::placeholder {
+  color: #bdbdbd;
+}
+
+.footer-input:focus {
+  color: #fff;
+  background: transparent;
+  border-color: #dc3545;
+  box-shadow: none;
+}
+
+.social-icon-link {
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  background: #dc3545 !important;
+  transform: translateY(-3px);
+}
+
+.social-icon-link:hover svg {
+  color: #fff !important;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

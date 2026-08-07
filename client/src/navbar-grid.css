@@ -1,0 +1,37 @@
+/* Navbar layout: 3-column grid guarantees the logo, left content, and
+   right content each get real space and can never visually overlap. */
+.navbar-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.nav-col {
+  min-width: 0; /* allows content to shrink/wrap instead of forcing overflow */
+}
+
+.nav-col-start {
+  grid-column: 1;
+  justify-content: flex-start;
+}
+
+.nav-col-end {
+  grid-column: 3;
+  justify-content: flex-end;
+}
+
+/* Logo sits in the grid's middle column and centers itself only within
+   whatever space is left over between the two side columns - not the
+   full viewport width. Replaces the old position: absolute approach. */
+.nav-logo-container {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav-logo {
+  /* No position/transform needed anymore - grid handles the centering */
+  display: inline-flex;
+}

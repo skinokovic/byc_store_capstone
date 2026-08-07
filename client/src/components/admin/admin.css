@@ -1,0 +1,352 @@
+.admin-shell {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.admin-frame {
+  background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+  border: 1px solid #dc3545;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: calc(100vh - 48px);
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: #121212;
+  padding: 24px 16px;
+  border-right: 1px solid #2e2e2e;
+}
+
+.admin-sidebar-logo {
+  padding-left: 8px;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.admin-nav-link:hover {
+  background-color: #262626;
+  color: #fff;
+}
+
+.admin-nav-link.active {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.admin-nav-sublist {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  margin: 2px 0 6px;
+}
+
+.admin-nav-sublink {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: #999;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.admin-nav-sublink:hover {
+  color: #fff;
+}
+
+.admin-nav-sublink.active {
+  color: #ff5c6c;
+  font-weight: 600;
+}
+
+.admin-footer-link {
+  font-size: 0.7rem;
+  color: #7a7a7a;
+  text-decoration: none;
+}
+
+/* Main content area */
+.admin-main {
+  padding: 32px;
+  color: #fff;
+}
+
+.admin-main h2 {
+  color: #ffffffb3;
+}
+
+.admin-main h6 {
+  color: #ffffff80;
+}
+
+/* Header search + icon buttons */
+.admin-search {
+  background-color: #1f1f1f;
+  border: 1px solid #3a3a3a;
+  border-radius: 999px;
+  padding: 8px 16px;
+  min-width: 240px;
+}
+
+.admin-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.85rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.admin-search-input::placeholder {
+  color: #8a8a8a;
+}
+
+.admin-icon-btn {
+  background-color: #1f1f1f;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Cards */
+.admin-card {
+  background-color: #171717;
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Top Products filter pills */
+.admin-filter-pill {
+  background-color: transparent;
+  border: 1px solid #3a3a3a;
+  color: #b8b8b8;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 0.75rem;
+}
+
+.admin-filter-pill.active {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+/* Generic small data table used in Top Products / Demographics */
+.admin-table {
+  font-size: 0.82rem;
+  color: #ddd;
+}
+
+.admin-table-header {
+  display: grid;
+  grid-template-columns: 0.6fr 1.6fr 1fr 1fr;
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 6px 0;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.admin-table-row {
+  display: grid;
+  grid-template-columns: 0.6fr 1.6fr 1fr 1fr;
+  padding: 10px 0;
+  border-bottom: 1px solid #232323;
+  color: #ddd;
+}
+
+/* Demographics table only has 3 columns, override the grid for it */
+.admin-card .admin-table-header:has(span:nth-child(3):last-child),
+.admin-card .admin-table-row:has(span:nth-child(3):last-child) {
+  grid-template-columns: 0.5fr 1fr 1.2fr;
+}
+
+/* Order status bars */
+.admin-order-bar {
+  background-color: #dc3545;
+  border-radius: 8px;
+  min-height: 44px;
+  color: #fff;
+}
+
+/* Larger data tables (Products/Categories/Users/Orders admin pages) */
+.admin-table-lg {
+  color: #e6e6e6;
+  --bs-table-bg: transparent;
+  --bs-table-color: #e6e6e6;
+}
+
+.admin-table-lg thead th {
+  color: #aaa;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid #2e2e2e;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.admin-table-lg tbody td {
+  border-bottom: 1px solid #232323;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  vertical-align: middle;
+  color: #e6e6e6;
+}
+
+.admin-table-lg tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table-lg tbody tr:hover {
+  background-color: #1a1a1a;
+}
+
+/* Long/secondary description text in tables tends to run small and muted
+   by design intent, but keep it above a readable contrast floor */
+.admin-table-lg .text-muted,
+.admin-table-lg small.text-muted {
+  color: #9a9a9a !important;
+}
+
+/* Small icon-only action buttons used in table rows */
+.admin-icon-btn-sm {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid #3a3a3a;
+  background-color: transparent;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.admin-icon-btn-sm:hover {
+  background-color: #262626;
+  color: #fff;
+}
+
+.admin-icon-btn-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.admin-icon-btn-sm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Forms (Create/Edit Product, Category, User, Settings, Support) */
+.admin-form label {
+  color: #bbb;
+}
+
+.admin-input {
+  background-color: #1f1f1f;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+}
+
+.admin-input:focus {
+  background-color: #1f1f1f;
+  border-color: #dc3545;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+.admin-input::placeholder {
+  color: #7a7a7a;
+}
+
+/* Responsiveness: sidebar collapses to a slim icon rail on small screens,
+   main content padding shrinks so cards/tables aren't cramped against the
+   edges on phones. */
+/* Responsiveness: below md, sidebar becomes a fixed off-canvas drawer that
+   slides in from the left over a backdrop, instead of squeezing into the
+   page flow. This is the standard admin-dashboard mobile pattern. */
+@media (max-width: 991px) {
+  .admin-shell {
+    padding: 0;
+  }
+
+  .admin-frame {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .admin-mobile-topbar {
+    padding: 16px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    max-width: 80vw;
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .admin-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1040;
+  }
+
+  .admin-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .admin-search {
+    min-width: 0;
+    flex-grow: 1;
+  }
+}
+
+/* Mobile card view - replaces the table below md breakpoint */
+.admin-row-card {
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.admin-row-card-border {
+  border-color: #2e2e2e !important;
+}

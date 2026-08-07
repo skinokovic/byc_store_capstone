@@ -1,0 +1,147 @@
+.collections-section {
+  background: #fff;
+}
+
+/* TEXT CARD */
+
+.collection-text-card {
+  background: #f8f8f8;
+
+  height: 100%;
+
+  min-height: 340px;
+
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collection-subtitle {
+  color: #777;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  margin-bottom: 0.8rem;
+}
+
+.collection-text-card h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.collection-text-card p {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* IMAGE CARD */
+
+.collection-image-card {
+  background: #f8f8f8;
+
+  height: 340px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* IMAGE */
+
+.collection-image-card img {
+  width: auto;
+
+  max-width: 75%;
+
+  max-height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.35s;
+}
+
+.collection-image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+
+.collection-text-card .btn {
+  align-self: flex-start;
+}
+
+/* MOBILE */
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  /* TEXT CARD */
+
+  .collection-text-card {
+    height: auto;
+    min-height: 320px;
+    padding: 2rem 1.5rem;
+    justify-content: space-between;
+  }
+
+  .collection-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .collection-text-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .collection-text-card p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+  }
+
+  .collection-text-card .btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  /* IMAGE CARD */
+
+  .collection-image-card {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .collection-image-card img {
+    max-width: 72%;
+    max-height: 85%;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .collection-text-card,
+  .collection-image-card {
+    height: 300px;
+  }
+}
+
+/* LARGE SCREEN */
+
+@media (min-width: 1200px) {
+  .collection-text-card,
+  .collection-image-card {
+    height: 420px;
+  }
+
+  .collection-image-card img {
+    max-width: 72%;
+  }
+}

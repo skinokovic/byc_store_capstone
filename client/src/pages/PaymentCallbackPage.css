@@ -1,0 +1,252 @@
+.payment-callback {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #f3f3f3;
+}
+
+.payment-callback__card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #1e1e1e;
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 2.5rem);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.payment-callback__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.payment-callback__icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.payment-callback__icon--success {
+  background: #22c55e;
+  box-shadow: 0 0 0 10px rgba(34, 197, 94, 0.15);
+}
+
+.payment-callback__icon--failed {
+  background: #ef4444;
+  box-shadow: 0 0 0 10px rgba(239, 68, 68, 0.15);
+  animation: shake 0.5s ease;
+}
+
+.payment-callback__icon--neutral {
+  background: #3a3a3a;
+  color: #d4d4d4;
+}
+
+.payment-callback__title {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  margin-bottom: 0.6rem;
+}
+
+.payment-callback__subtitle {
+  color: #a3a3a3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  max-width: 320px;
+}
+
+.payment-callback__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.75rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+  width: 100%;
+  max-width: 260px;
+}
+
+.payment-callback__btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.payment-callback__btn--success {
+  background: #22c55e;
+  color: #0b1a10;
+  border: 1px solid #16a34a;
+}
+
+.payment-callback__btn--failed {
+  background: #ef4444;
+  color: #fff;
+  border: 1px solid #dc2626;
+}
+
+.payment-callback__btn--neutral {
+  background: #3a3a3a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+}
+
+/* Confetti — success only */
+.confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.confetti__piece {
+  position: absolute;
+  top: -10%;
+  width: 8px;
+  height: 8px;
+  opacity: 0.9;
+  animation: fall 3.2s linear infinite;
+}
+
+.confetti__piece--0 {
+  left: 8%;
+  background: #22c55e;
+  animation-delay: 0s;
+  border-radius: 2px;
+}
+.confetti__piece--1 {
+  left: 20%;
+  background: #a3a3a3;
+  animation-delay: 0.4s;
+  border-radius: 50%;
+}
+.confetti__piece--2 {
+  left: 34%;
+  background: #4ade80;
+  animation-delay: 0.8s;
+  border-radius: 2px;
+}
+.confetti__piece--3 {
+  left: 48%;
+  background: #d4d4d4;
+  animation-delay: 0.2s;
+  border-radius: 50%;
+}
+.confetti__piece--4 {
+  left: 64%;
+  background: #22c55e;
+  animation-delay: 1.1s;
+  border-radius: 2px;
+}
+.confetti__piece--5 {
+  left: 80%;
+  background: #86efac;
+  animation-delay: 0.6s;
+  border-radius: 50%;
+}
+
+.confetti__piece:nth-child(odd) {
+  top: -20%;
+}
+.confetti__piece:nth-child(3n) {
+  width: 6px;
+  height: 12px;
+}
+.confetti__piece:nth-child(5n) {
+  animation-duration: 4s;
+}
+.confetti__piece:nth-child(7n) {
+  left: 12%;
+}
+.confetti__piece:nth-child(11n) {
+  left: 55%;
+}
+.confetti__piece:nth-child(13n) {
+  left: 90%;
+}
+.confetti__piece:nth-child(17n) {
+  left: 5%;
+}
+.confetti__piece:nth-child(19n) {
+  left: 70%;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(420px) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .confetti__piece,
+  .payment-callback__icon--failed,
+  .spin {
+    animation: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .payment-callback__card {
+    border-radius: 1.25rem;
+  }
+  .payment-callback__icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.25rem;
+  }
+  .payment-callback__btn {
+    max-width: 100%;
+  }
+}

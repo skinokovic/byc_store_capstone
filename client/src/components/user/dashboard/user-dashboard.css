@@ -1,0 +1,196 @@
+.ud-shell {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.ud-frame {
+  background: #ffffff;
+  border: 1px solid #f1b0b7;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: calc(100vh - 48px);
+}
+
+/* Sidebar */
+.ud-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  padding: 24px 16px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.ud-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.ud-nav-link:hover {
+  background-color: #fdecec;
+  color: #dc3545;
+}
+
+.ud-nav-link.active {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Main content */
+.ud-main {
+  padding: 32px;
+  color: #212121;
+}
+
+.ud-icon-btn,
+.ud-icon-btn-sm {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #212121;
+}
+
+.ud-icon-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.ud-icon-btn-sm {
+  width: 30px;
+  height: 30px;
+}
+
+.ud-icon-btn-sm:hover {
+  background-color: #fdecec;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+/* Cards */
+.ud-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Stat cards on the dashboard overview */
+.ud-stat-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.ud-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #fdecec;
+  color: #dc3545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tables - light theme version of admin-table-lg */
+.ud-table-lg thead th {
+  color: #888;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.ud-table-lg tbody td {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.ud-table-lg tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mobile card view - replaces the table below md, same pattern as admin */
+.ud-row-card {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.ud-row-card-border {
+  border-color: #eee !important;
+}
+
+.ud-input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.ud-input:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+/* Responsiveness - same off-canvas drawer pattern as admin.css */
+@media (max-width: 991px) {
+  .ud-shell {
+    padding: 0;
+  }
+
+  .ud-frame {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .ud-mobile-topbar {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .ud-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    max-width: 80vw;
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .ud-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .ud-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+
+  .ud-main {
+    padding: 20px;
+  }
+}
