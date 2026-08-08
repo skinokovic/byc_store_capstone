@@ -2,10 +2,10 @@ import Cart from "../models/cartModel.js";
 import Product from "../models/Product.js";
 
 async function getPopulatedCart(userId) {
-  return Cart.findOne({ user: userId }).populate(
-    "items.product",
-    "name price images stock",
-  );
+  return Cart.findOne({ user: userId }).populate({
+    path: "items.product",
+    select: "name sku description price images stock",
+  });
 }
 
 // @desc    Get the logged-in user's cart (creates an empty one if it
