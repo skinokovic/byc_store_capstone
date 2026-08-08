@@ -162,8 +162,8 @@ function OrdersTable({ orders, onStatusChange }) {
               <th>Customer</th>
               <th>Items</th>
               <th>Total</th>
-              <th>Payment</th>
-              <th>Status</th>
+              <th>Payment Status</th>
+              <th>Order Status</th>
               <th>Date</th>
             </tr>
           </thead>

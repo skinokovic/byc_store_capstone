@@ -1,0 +1,262 @@
+/* =========================================================
+   CONTACT TABLE - DESKTOP DARK THEME
+========================================================= */
+
+.table {
+  --bs-table-bg: #1f1f1f;
+  --bs-table-color: #ffffff;
+  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+
+  width: 100%;
+
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+.table thead th {
+  background: #1f1f1f;
+  color: #9ca3af;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  padding: 14px 12px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table tbody td {
+  background: #1f1f1f;
+  color: #ffffff;
+
+  font-size: 0.82rem;
+
+  padding: 14px 12px;
+
+  border-color: rgba(255, 255, 255, 0.08);
+
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  background: #1f1f1f;
+}
+
+.table tbody tr:hover td {
+  background: #252525;
+}
+
+/* =========================================================
+   CONTACT MOBILE CARD
+========================================================= */
+
+.contact-mobile-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 16px;
+
+  background: #1f1f1f !important;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-mobile-info {
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-mobile-field {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+
+  margin-bottom: 8px;
+}
+
+.contact-mobile-label {
+  flex-shrink: 0;
+
+  min-width: 58px;
+
+  color: #9ca3af;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.contact-mobile-value {
+  min-width: 0;
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.contact-mobile-message {
+  align-items: flex-start;
+}
+
+.contact-mobile-message .contact-mobile-value {
+  white-space: normal;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.contact-mobile-status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.contact-mobile-actions {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-top: 14px;
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.contact-mobile-action {
+  width: 100%;
+  min-width: 0;
+
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-mobile-action:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.contact-mobile-view {
+  color: #ffffff;
+
+  background: #343a40;
+
+  border: 1px solid #495057;
+}
+
+.contact-mobile-view:hover {
+  color: #ffffff;
+
+  background: #495057;
+}
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.contact-mobile-delete {
+  color: #ffffff;
+
+  background: #dc3545;
+
+  border: 1px solid #dc3545;
+
+  cursor: pointer;
+}
+
+.contact-mobile-delete:hover {
+  color: #ffffff;
+
+  background: #bb2d3b;
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+  .contact-mobile-card {
+    padding: 14px;
+  }
+
+  .contact-mobile-field {
+    gap: 6px;
+  }
+
+  .contact-mobile-label {
+    min-width: 52px;
+
+    font-size: 0.68rem;
+  }
+
+  .contact-mobile-value {
+    font-size: 0.74rem;
+  }
+
+  .contact-mobile-action {
+    height: 34px;
+
+    font-size: 0.7rem;
+  }
+}

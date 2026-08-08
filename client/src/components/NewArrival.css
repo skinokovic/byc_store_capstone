@@ -1,0 +1,184 @@
+/* =========================================================
+   NEW ARRIVALS SECTION
+========================================================= */
+
+.new-arrivals-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.new-arrivals-heading h2 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.new-arrivals-heading p {
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.new-arrivals-card {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.new-arrivals-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-arrivals-image {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.new-arrivals-card:hover .new-arrivals-image {
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   TEXT CONTENT
+========================================================= */
+
+.new-arrivals-content {
+  padding: 16px 4px 4px;
+}
+
+.new-arrivals-title {
+  margin: 0 0 7px;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: #212529;
+}
+
+.new-arrivals-description {
+  margin: 0;
+
+  font-size: 0.86rem;
+  line-height: 1.55;
+
+  color: #6c757d;
+
+  max-width: 95%;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .new-arrivals-image {
+    height: 230px;
+  }
+
+  .new-arrivals-content {
+    padding: 14px 4px 4px;
+  }
+
+  .new-arrivals-title {
+    font-size: 1rem;
+  }
+
+  .new-arrivals-description {
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .new-arrivals-section {
+    width: 100%;
+  }
+
+  .new-arrivals-heading {
+    padding: 0 16px;
+  }
+
+  .new-arrivals-heading h2 {
+    font-size: 1.45rem;
+  }
+
+  .new-arrivals-heading p {
+    font-size: 0.82rem;
+  }
+
+  /* Image touches the mobile screen edges */
+  .new-arrivals-image {
+    width: 100%;
+    height: 190px;
+  }
+
+  /*
+    Text does NOT touch the screen edges.
+    It has comfortable horizontal spacing.
+  */
+  .new-arrivals-content {
+    padding: 13px 18px 20px;
+  }
+
+  .new-arrivals-title {
+    font-size: 0.98rem;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+
+  .new-arrivals-description {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+  .new-arrivals-heading {
+    padding: 0 14px;
+  }
+
+  .new-arrivals-heading h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Smaller image */
+  .new-arrivals-image {
+    height: 170px;
+  }
+
+  /* Text remains comfortably inside the screen */
+  .new-arrivals-content {
+    padding: 11px 16px 18px;
+  }
+
+  .new-arrivals-title {
+    font-size: 0.92rem;
+  }
+
+  .new-arrivals-description {
+    font-size: 0.74rem;
+  }
+}
