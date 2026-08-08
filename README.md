@@ -9,7 +9,7 @@ The project is designed with a separated frontend and backend architecture and d
 ## 🌐 Live Application
 
 ### Frontend
-https://byc-store-capstone-rosy.vercel.app
+[https://byc-store-capstone-rosy.vercel.app](https://byc-store-capstone-project.vercel.app/)
 
 ### Backend API
 https://byc-store-capstone.onrender.com
