@@ -167,17 +167,7 @@ function Shop() {
             : "No products found."}
         </p>
       ) : view === "grid" ? (
-        // <div className="row g-2 g-md-4-4">
-        //   {paginatedProducts.map((product) => (
-        //     <div
-        //       className="col-6 col-md-4 col-lg-3 col-xl-2-4"
-        //       key={product._id}
-        //       style={{ flex: "1 1 0", minWidth: 200 }}
-        //     >
-        //       <ProductCard product={product} view="grid" />
-        //     </div>
-        //   ))}
-        // </div>
+
         <div className="row g-2 g-md-4 shop-product-grid">
           {paginatedProducts.map((product) => (
             <div
