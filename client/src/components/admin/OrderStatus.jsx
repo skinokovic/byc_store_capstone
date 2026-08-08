@@ -1,37 +1,3 @@
-// const orderStatusData = [
-//   { label: "Total Orders", value: 1670, max: 1670, showBar: true },
-//   { label: "In Transit", value: 102, max: 1670, showBar: true },
-//   { label: "Delivered", value: 825, max: 1670, showBar: true },
-//   { label: "Cancelled", value: 67, max: 1670, showBar: true },
-// ];
-
-// function OrderStatus() {
-//   return (
-//     <div className="admin-card h-100">
-//       <h6 className="fw-bold mb-0">Order Status</h6>
-//       <p className="text-secondary small mb-3">Showing state of all the orders</p>
-
-//       <div className="d-flex flex-column gap-3">
-//         {orderStatusData.map((row) => {
-//           const widthPercent = Math.max((row.value / row.max) * 100, 8);
-//           return (
-//             <div
-//               key={row.label}
-//               className="admin-order-bar d-flex align-items-center justify-content-between px-3"
-//               style={{ width: `${widthPercent}%` }}
-//             >
-//               <span className="small">{row.label}</span>
-//               <span className="fw-bold small">{row.value.toLocaleString()}</span>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default OrderStatus;
-
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import {
@@ -41,6 +7,7 @@ import {
   CheckCircle2,
   XCircle,
 } from "lucide-react";
+import "./OrderStatus.css";
 
 function OrderStatus() {
   const { allOrders: orders = [] } = useSelector((state) => state.orders);
@@ -108,22 +75,28 @@ function OrderStatus() {
   ];
 
   return (
-    <div className="admin-card h-100">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+    <div className="admin-card order-status-card h-100">
+      {/* =========================
+          HEADER
+      ========================== */}
+      <div className="order-status-header">
         <div>
           <h5 className="fw-bold mb-1">Order Status</h5>
-          <small className="text-secondary">
-            Distribution of customer orders
-          </small>
+
+          <small className="text-muted">Distribution of customer orders</small>
         </div>
 
-        <div className="text-end">
-          <h3 className="fw-bold text-danger mb-0">{stats.total}</h3>
-          <small>Total Orders</small>
+        <div className="order-total-box">
+          <span className="order-total-number">{stats.total}</span>
+
+          <span className="order-total-label">Total Orders</span>
         </div>
       </div>
 
-      <div className="d-flex flex-column gap-4">
+      {/* =========================
+          STATUS LIST
+      ========================== */}
+      <div className="order-status-list">
         {rows.map((row) => {
           const Icon = row.icon;
 
@@ -131,29 +104,35 @@ function OrderStatus() {
             stats.total === 0 ? 0 : (row.value / stats.total) * 100;
 
           return (
-            <div key={row.label}>
-              <div className="d-flex justify-content-between mb-2">
-                <div className="d-flex align-items-center gap-2">
-                  <Icon size={18} color={row.color} />
+            <div key={row.label} className="order-status-item">
+              {/* Status information */}
+              <div className="order-status-info">
+                <div className="order-status-name">
+                  <div
+                    className="order-status-icon"
+                    style={{
+                      color: row.color,
+                      background: `${row.color}15`,
+                    }}
+                  >
+                    <Icon size={17} />
+                  </div>
 
-                  <span className="fw-semibold">{row.label}</span>
+                  <span>{row.label}</span>
                 </div>
 
-                <div className="text-end">
+                <div className="order-status-value">
                   <strong>{row.value}</strong>
 
-                  <small className="ms-2 text-secondary">
-                    ({percent.toFixed(0)}%)
-                  </small>
+                  <span>{percent.toFixed(0)}%</span>
                 </div>
               </div>
 
+              {/* Progress */}
               <div
-                className="progress"
+                className="progress order-status-progress"
                 style={{
-                  height: 8,
-                  borderRadius: 50,
-                  background: "#ececec",
+                  background: "#eeeeee",
                 }}
               >
                 <div
@@ -161,7 +140,7 @@ function OrderStatus() {
                   style={{
                     width: `${percent}%`,
                     background: row.color,
-                    transition: "0.5s",
+                    transition: "width 0.5s ease",
                   }}
                 />
               </div>

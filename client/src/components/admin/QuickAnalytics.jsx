@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
+import "./QuickAnalytics.css";
 import {
   TrendingUp,
   Users,
@@ -98,71 +99,72 @@ function QuickAnalytics() {
   ];
 
   return (
-    <div className="admin-card h-100">
+    <div className="admin-card h-100 quick-analytics-card">
+      {/* =========================
+          HEADER
+      ========================== */}
       <div className="mb-4">
         <h5 className="fw-bold mb-1">Quick Analytics</h5>
 
         <small className="text-secondary">Business overview at a glance</small>
       </div>
 
+      {/* =========================
+          ANALYTIC CARDS
+      ========================== */}
       <div className="row g-3">
-        {cards.map((card) => (
-          <div className="col-12 col-sm-6" key={card.title}>
-            <div
-              className="border rounded h-100 p-3"
-              style={{
-                background: "#fff",
-                transition: ".2s",
-              }}
-            >
-              <div className="d-flex justify-content-between align-items-center">
-                <div>
+        {cards.map((card) => {
+          const Icon = card.icon;
+
+          return (
+            <div className="col-12 col-sm-6" key={card.title}>
+              <div className="quick-analytics-item">
+                {/* Text */}
+                <div className="quick-analytics-content">
                   <small className="text-secondary">{card.title}</small>
 
-                  <h4
-                    className="fw-bold mb-1"
-                    style={{
-                      color: "#212529",
-                      fontSize: "1rem",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {card.value}
-                  </h4>
+                  <h4 className="quick-analytics-value">{card.value}</h4>
                 </div>
 
+                {/* Icon */}
                 <div
-                  className={`bg-${card.color} bg-opacity-10 rounded-circle d-flex justify-content-center align-items-center`}
-                  style={{
-                    width: 50,
-                    height: 50,
-                  }}
+                  className={`quick-analytics-icon bg-${card.color} bg-opacity-10`}
                 >
-                  <card.icon className={`text-${card.color}`} size={22} />
+                  <Icon className={`text-${card.color}`} size={21} />
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
+      {/* =========================
+          ADDITIONAL STATISTICS
+      ========================== */}
       <hr className="my-4" />
 
-      <div className="row text-center">
-        <div className="col-4">
-          <h4 className="fw-bold text-success">{analytics.totalCustomers}</h4>
+      <div className="quick-analytics-bottom">
+        <div className="quick-bottom-stat">
+          <h4 className="fw-bold text-success mb-0">
+            {analytics.totalCustomers}
+          </h4>
+
           <small className="text-secondary">Customers</small>
         </div>
 
-        <div className="col-4">
-          <h4 className="fw-bold text-primary">{analytics.totalProducts}</h4>
+        <div className="quick-bottom-stat">
+          <h4 className="fw-bold text-primary mb-0">
+            {analytics.totalProducts}
+          </h4>
+
           <small className="text-secondary">Products</small>
         </div>
 
-        <div className="col-4">
-          <h4 className="fw-bold text-danger">
+        <div className="quick-bottom-stat">
+          <h4 className="fw-bold text-danger mb-0">
             {analytics.outOfStockProducts}
           </h4>
+
           <small className="text-secondary">Out of Stock</small>
         </div>
       </div>

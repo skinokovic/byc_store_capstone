@@ -8,13 +8,13 @@ const BANKS = [
     id: "gtbank",
     name: "Guaranty Trust Bank",
     accountName: "BYC Nig Ltd",
-    accountNumber: "0123456789",
+    accountNumber: "0108070157",
   },
   {
     id: "zenith",
-    name: "Zenith Bank",
+    name: "Access Bank",
     accountName: "BYC Nig Ltd",
-    accountNumber: "1234567890",
+    accountNumber: "0047947276",
   },
 ];
 

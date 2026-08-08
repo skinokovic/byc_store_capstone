@@ -1,59 +1,3 @@
-// import { LineChart, Line, ResponsiveContainer, YAxis, XAxis } from "recharts";
-// import { Info } from "lucide-react";
-
-// const dummyData = [
-//   { month: "Jan", value: 3200 },
-//   { month: "", value: 4100 },
-//   { month: "", value: 2800 },
-//   { month: "", value: 5000 },
-//   { month: "", value: 3600 },
-//   { month: "Mar", value: 6242 },
-// ];
-
-// function OverviewChart() {
-//   const latestValue = dummyData[dummyData.length - 1].value;
-
-//   return (
-//     <div className="admin-card">
-//       <div className="d-flex justify-content-between align-items-start mb-1">
-//         <div>
-//           <h6 className="fw-bold mb-0">Overview</h6>
-//           <p className="text-secondary small mb-0">Trends over a period</p>
-//         </div>
-//         <Info size={16} className="text-secondary" />
-//       </div>
-
-//       <p className="fw-bold mb-2" style={{ fontSize: "1.1rem" }}>
-//         ${latestValue.toLocaleString()}.0
-//       </p>
-
-//       <div style={{ width: "100%", height: 160 }}>
-//         <ResponsiveContainer>
-//           <LineChart data={dummyData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-//             <XAxis
-//               dataKey="month"
-//               tick={{ fill: "#888", fontSize: 12 }}
-//               axisLine={{ stroke: "#333" }}
-//               tickLine={false}
-//             />
-//             <YAxis hide domain={["dataMin - 500", "dataMax + 500"]} />
-//             <Line
-//               type="monotone"
-//               dataKey="value"
-//               stroke="#dc3545"
-//               strokeWidth={2}
-//               dot={false}
-//               activeDot={{ r: 5, fill: "#dc3545" }}
-//             />
-//           </LineChart>
-//         </ResponsiveContainer>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default OverviewChart;
-
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import {
@@ -114,6 +58,9 @@ function OverviewChart() {
 
   return (
     <div className="admin-card h-100">
+      {/* =========================
+          HEADER
+      ========================== */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h5 className="fw-bold mb-1">Overview</h5>
@@ -124,8 +71,12 @@ function OverviewChart() {
         <TrendingUp size={22} className="text-danger" />
       </div>
 
+      {/* =========================
+          MODE BUTTONS
+      ========================== */}
       <div className="d-flex gap-2 mb-4">
         <button
+          type="button"
           className={`btn btn-sm ${
             mode === "revenue" ? "btn-danger" : "btn-outline-danger"
           }`}
@@ -135,6 +86,7 @@ function OverviewChart() {
         </button>
 
         <button
+          type="button"
           className={`btn btn-sm ${
             mode === "orders" ? "btn-danger" : "btn-outline-danger"
           }`}
@@ -144,6 +96,9 @@ function OverviewChart() {
         </button>
       </div>
 
+      {/* =========================
+          TOTAL
+      ========================== */}
       <div className="mb-3">
         <h3 className="fw-bold mb-0">
           {mode === "revenue"
@@ -156,14 +111,45 @@ function OverviewChart() {
         </small>
       </div>
 
-      <div style={{ width: "100%", height: 300 }}>
-        <ResponsiveContainer>
-          <LineChart data={chartData}>
+      {/* =========================
+          CHART
+      ========================== */}
+      <div
+        style={{
+          width: "100%",
+          height: 300,
+          minWidth: 0,
+        }}
+      >
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart
+            data={chartData}
+            margin={{
+              top: 10,
+              right: 15,
+              left: 5,
+              bottom: 5,
+            }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
 
-            <XAxis dataKey="month" />
+            <XAxis
+              dataKey="month"
+              interval="preserveStartEnd"
+              minTickGap={10}
+              tick={{
+                fontSize: 10,
+              }}
+              tickMargin={6}
+            />
 
-            <YAxis />
+            <YAxis
+              width={50}
+              tick={{
+                fontSize: 10,
+              }}
+              tickMargin={6}
+            />
 
             <Tooltip />
 

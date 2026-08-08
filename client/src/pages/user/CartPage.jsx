@@ -30,17 +30,6 @@ function CartPage() {
     }
   }, [dispatch, user]);
 
-  // async function handleQuantityChange(itemId, quantity) {
-  //   if (quantity < 1) return;
-  //   const result = await dispatch(updateCartItem({ itemId, quantity }));
-  //   if (!updateCartItem.fulfilled.match(result)) {
-  //     toast.error(result.payload || "Failed to update quantity");
-  //   }
-  // }
-
-  // Updates quantity.
-  // Logged-in users -> update MongoDB.
-  // Guests -> update localStorage.
   async function handleQuantityChange(itemId, quantity) {
     if (quantity < 1) return;
 
@@ -62,18 +51,6 @@ function CartPage() {
     }
   }
 
-  // async function handleRemove(itemId) {
-  //   const result = await dispatch(removeCartItem(itemId));
-  //   if (removeCartItem.fulfilled.match(result)) {
-  //     toast.success("Item removed");
-  //   } else {
-  //     toast.error(result.payload || "Failed to remove item");
-  //   }
-  // }
-
-  // Removes one item.
-  // Logged-in users -> MongoDB.
-  // Guests -> localStorage.
   async function handleRemove(itemId) {
     if (!user) {
       dispatch(removeGuestCart(itemId));
@@ -92,20 +69,6 @@ function CartPage() {
     }
   }
 
-  // async function handleClearCart() {
-  //   if (!window.confirm("Remove all items from your cart?")) return;
-
-  //   const result = await dispatch(clearCart());
-  //   if (clearCart.fulfilled.match(result)) {
-  //     toast.success("Cart cleared");
-  //   } else {
-  //     toast.error(result.payload || "Failed to clear cart");
-  //   }
-  // }
-
-  // Clears the entire cart.
-  // Logged-in users -> MongoDB.
-  // Guests -> localStorage.
   async function handleClearCart() {
     if (!window.confirm("Remove all items from your cart?")) return;
 

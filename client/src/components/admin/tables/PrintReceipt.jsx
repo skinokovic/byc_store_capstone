@@ -108,12 +108,17 @@ const PrintReceipt = forwardRef(({ order }, ref) => {
         @media print {
           body * { visibility: hidden; }
           .receipt-container, .receipt-container * { visibility: visible; }
-          .receipt-container { position: absolute; top: 0; left: 0; }
+          .receipt-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
         }
       `}</style>
 
       <div className="receipt-header">
-        <h2>BRIGHT BYC STORE</h2>
+        <h2>BRIGHT BYC STORE Nigeria Limited</h2>
         <p>Port Harcourt</p>
         <p>support@brightbycstore.com</p>
       </div>
@@ -135,6 +140,9 @@ const PrintReceipt = forwardRef(({ order }, ref) => {
 
       <p className="receipt-section-title">Billed To:</p>
       <p style={{ margin: "2px 0" }}>{addr?.fullName || order.user?.name}</p>
+      {order.user?.email && (
+        <p style={{ margin: "2px 0" }}>{order.user.email}</p>
+      )}
       <p style={{ margin: "2px 0" }}>{addr?.phone}</p>
       <p style={{ margin: "2px 0" }}>
         {addr?.street}, {addr?.city}, {addr?.state}

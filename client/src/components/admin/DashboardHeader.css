@@ -1,0 +1,65 @@
+/* =========================================================
+   ADMIN → HOME / STORE BUTTON
+========================================================= */
+
+.dashboard-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 8px 15px;
+
+  border: 1px solid rgba(220, 53, 69, 0.35);
+  border-radius: 10px;
+
+  background: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dashboard-home-btn:hover {
+  background: #dc3545;
+  color: #ffffff;
+
+  border-color: #dc3545;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 14px rgba(220, 53, 69, 0.25);
+}
+
+.dashboard-home-btn:active {
+  transform: translateY(0);
+}
+
+.dashboard-home-btn svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .dashboard-home-btn {
+    min-height: 38px;
+    padding: 7px 12px;
+
+    font-size: 0.78rem;
+  }
+}

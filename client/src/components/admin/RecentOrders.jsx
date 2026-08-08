@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ArrowRight } from "lucide-react";
+import "./RecentOrders.css";
 
 const currency = new Intl.NumberFormat("en-NG", {
   style: "currency",
@@ -29,44 +30,44 @@ function RecentOrders() {
 
   return (
     <div className="admin-card h-100">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      {/* =========================
+          HEADER
+      ========================== */}
+      <div className="d-flex justify-content-between align-items-start gap-2 mb-4">
         <div>
-          <h5 className="fw-bold mb-0">Recent Orders</h5>
+          <h5 className="fw-bold mb-1">Recent Orders</h5>
+
           <small className="text-secondary">Latest customer orders</small>
         </div>
 
         <button
-          className="btn btn-sm btn-outline-danger"
+          type="button"
+          className="btn btn-sm btn-outline-danger flex-shrink-0"
           onClick={() => navigate("/admin/orders")}
         >
           View All
         </button>
       </div>
 
+      {/* =========================
+          ORDERS
+      ========================== */}
       {recentOrders.length === 0 ? (
         <div className="text-center py-5 text-secondary">No recent orders</div>
       ) : (
         <div className="d-flex flex-column gap-3">
           {recentOrders.map((order) => (
-            <div
-              key={order._id}
-              className="d-flex justify-content-between align-items-center border rounded p-3"
-            >
-              {/* Left */}
-              <div className="d-flex align-items-center gap-3">
-                <div
-                  className="rounded-circle bg-danger text-white fw-bold d-flex justify-content-center align-items-center"
-                  style={{
-                    width: 45,
-                    height: 45,
-                    fontSize: 18,
-                  }}
-                >
+            <div key={order._id} className="recent-order-card">
+              {/* =========================
+                  CUSTOMER SECTION
+              ========================== */}
+              <div className="recent-order-customer">
+                <div className="recent-order-avatar">
                   {order.user?.name?.charAt(0)?.toUpperCase() || "U"}
                 </div>
 
-                <div>
-                  <div className="fw-semibold">
+                <div className="recent-order-customer-info">
+                  <div className="fw-semibold text-truncate">
                     {order.user?.name || "Unknown User"}
                   </div>
 
@@ -80,10 +81,13 @@ function RecentOrders() {
                 </div>
               </div>
 
-              {/* Right */}
-
-              <div className="text-end">
-                <div className="fw-bold">{currency.format(order.total)}</div>
+              {/* =========================
+                  ORDER DETAILS
+              ========================== */}
+              <div className="recent-order-details">
+                <div className="recent-order-total">
+                  {currency.format(order.total)}
+                </div>
 
                 <span
                   className={`badge ${
@@ -102,10 +106,14 @@ function RecentOrders() {
         </div>
       )}
 
+      {/* =========================
+          VIEW ALL
+      ========================== */}
       {recentOrders.length > 0 && (
         <div className="text-center mt-4">
           <button
-            className="btn btn-danger"
+            type="button"
+            className="btn btn-danger recent-orders-view-btn"
             onClick={() => navigate("/admin/orders")}
           >
             View All Orders

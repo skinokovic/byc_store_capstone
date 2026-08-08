@@ -6,7 +6,7 @@ import {
   Truck,
   CheckCircle,
 } from "lucide-react";
-
+import "./StatsCards.css";
 import { useSelector } from "react-redux";
 
 const currency = new Intl.NumberFormat("en-NG", {
@@ -77,33 +77,32 @@ function StatsCards() {
   ];
 
   return (
-    <div className="row g-4">
+    <div className="row g-3 g-lg-4 dashboard-stats-row">
       {cards.map((card) => {
         const Icon = card.icon;
 
         return (
-          <div
-            key={card.title}
-            className="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12"
-          >
+          <div key={card.title} className="col-6 col-md-4 col-xl-2">
             <div className="dashboard-stat-card">
-              <div className="dashboard-stat-top">
-                <div
-                  className="dashboard-stat-icon p-2"
-                  style={{
-                    background: card.bg,
-                    color: card.color,
-                  }}
-                >
-                  <Icon size={24} />
-                </div>
+              {/* ICON */}
+              <div
+                className="dashboard-stat-icon"
+                style={{
+                  background: card.bg,
+                  color: card.color,
+                }}
+              >
+                <Icon size={24} strokeWidth={2} />
               </div>
 
-              <h4 className="dashboard-stat-value">{card.value}</h4>
+              {/* CONTENT */}
+              <div className="dashboard-stat-content">
+                <div className="dashboard-stat-title">{card.title}</div>
 
-              <h6 className="dashboard-stat-title">{card.title}</h6>
+                <div className="dashboard-stat-value">{card.value}</div>
 
-              <small className="dashboard-stat-subtitle">{card.subtitle}</small>
+                <div className="dashboard-stat-subtitle">{card.subtitle}</div>
+              </div>
             </div>
           </div>
         );

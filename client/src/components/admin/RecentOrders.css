@@ -1,0 +1,172 @@
+/* =========================================
+   RECENT ORDERS
+========================================= */
+
+.recent-order-card {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.recent-order-card:hover {
+  border-color: #dee2e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Customer */
+
+.recent-order-customer {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.recent-order-avatar {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  border-radius: 50%;
+  background: #dc3545;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.recent-order-customer-info {
+  min-width: 0;
+}
+
+.recent-order-customer-info .fw-semibold {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Right side */
+
+.recent-order-details {
+  flex-shrink: 0;
+  min-width: 100px;
+  text-align: right;
+}
+
+.recent-order-total {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* View button */
+
+.recent-orders-view-btn {
+  min-height: 42px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 767.98px) {
+  .recent-order-card {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .recent-order-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 15px;
+  }
+
+  .recent-order-customer {
+    gap: 10px;
+  }
+
+  .recent-order-customer-info .fw-semibold {
+    max-width: 140px;
+  }
+
+  .recent-order-details {
+    min-width: 90px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+  .recent-order-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .recent-order-customer-info .fw-semibold {
+    max-width: 120px;
+  }
+
+  .recent-order-details {
+    min-width: 85px;
+  }
+
+  .recent-order-total {
+    font-size: 14px;
+  }
+
+  .recent-order-view-btn {
+    width: 100%;
+  }
+
+  .recent-orders-view-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .recent-order-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .recent-order-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+  }
+
+  .recent-order-details .mt-1 {
+    margin-top: 0 !important;
+  }
+
+  .recent-order-customer-info .fw-semibold {
+    max-width: 180px;
+  }
+}

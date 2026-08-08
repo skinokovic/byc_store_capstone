@@ -1,0 +1,206 @@
+/* =========================================
+   ORDER STATUS CARD
+========================================= */
+
+.order-status-card {
+  padding: 22px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.order-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.order-total-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 80px;
+}
+
+.order-total-number {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #dc3545;
+  line-height: 1;
+}
+
+.order-total-label {
+  color: #6c757d;
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+
+/* =========================================
+   STATUS LIST
+========================================= */
+
+.order-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.order-status-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.order-status-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 9px;
+}
+
+.order-status-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.order-status-name > span {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.order-status-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-status-value {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.order-status-value strong {
+  font-size: 0.95rem;
+}
+
+.order-status-value span {
+  color: #6c757d;
+  font-size: 0.75rem;
+}
+
+.order-status-progress {
+  height: 7px !important;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.order-status-progress .progress-bar {
+  border-radius: 50px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+  .order-status-card {
+    padding: 20px;
+  }
+
+  .order-status-list {
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+  .order-status-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .order-status-header {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 22px;
+  }
+
+  .order-total-box {
+    width: 100%;
+    min-width: 0;
+
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f8f9fa;
+  }
+
+  .order-total-number {
+    font-size: 1.5rem;
+  }
+
+  .order-total-label {
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+
+  .order-status-list {
+    gap: 18px;
+  }
+
+  .order-status-info {
+    gap: 10px;
+  }
+
+  .order-status-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .order-status-name {
+    gap: 8px;
+  }
+
+  .order-status-name > span {
+    font-size: 0.85rem;
+  }
+
+  .order-status-value {
+    gap: 5px;
+  }
+
+  .order-status-value strong {
+    font-size: 0.9rem;
+  }
+
+  .order-status-value span {
+    font-size: 0.7rem;
+  }
+
+  .order-status-progress {
+    height: 6px !important;
+  }
+}
